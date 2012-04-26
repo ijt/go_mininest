@@ -30,7 +30,7 @@ import (
 	"log"
 	"math"
 	"math/rand"
-	"mininest"
+	"github.com/ijt/go_mininest/mininest"
 )
 
 type Object struct {
