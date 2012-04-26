@@ -1,6 +1,6 @@
 package main
 
-// "LIGHTHOUSE" mininest SAMPLING APPLICATION
+// "LIGHTHOUSE" NESTED SAMPLING APPLICATION
 // (GNU General Public License software, (C) Sivia and Skilling 2006)
 // Translated to Go by Issac Trotts (2012)
 //
@@ -30,7 +30,7 @@ import (
 	"log"
 	"math"
 	"math/rand"
-	"github.com/ijt/go_mininest/mininest"
+	"go_mininest"
 )
 
 type Object struct {
@@ -41,7 +41,7 @@ type Object struct {
 	logL  float64 // logLikelihood = ln Prob(data | position)
 }
 
-func (o *Object) Copy() mininest.Object {
+func (o *Object) Copy() go_mininest.Object {
 	ret := new(Object)
 	*ret = *o
 	return ret
@@ -122,7 +122,7 @@ func (Obj *Object) Explore(logLstar float64) {
 // Posterior properties, here mean and stddev of x,y
 // Objects defining posterior
 // Evidence (= total weight = SUM[Samples] Weight)
-func Results(Samples []mininest.Object, logZ float64) {
+func Results(Samples []go_mininest.Object, logZ float64) {
 }
 
 func plus(x float64, y float64) float64 {
@@ -134,12 +134,12 @@ func plus(x float64, y float64) float64 {
 
 func main() {
 	// Sample objects from the prior
-	var objects [100]mininest.Object
+	var objects [100]go_mininest.Object
 	for i := range objects {
 		objects[i] = SampleFromPrior()
 	}
 
-	results := mininest.GetArray(mininest.GoSampling(objects[:]), 1000)
+	results := go_mininest.GetArray(go_mininest.GoSampling(objects[:]), 1000)
 
 	// Summarize the results.
 	logZ := results[len(results)-1].LogZ  // final estimate of log(Z)

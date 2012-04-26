@@ -1,4 +1,4 @@
-package mininest
+package go_mininest
 
 import (
 	"log"

@@ -7,12 +7,14 @@ John Skilling's Nested Sampling algorithm.
 The original code is at http://www.inference.phy.cam.ac.uk/bayesys/.
 
 # Installing
-    $ export GOPATH=$GOPATH:`pwd`
-    $ go install mininest
+## From local source
+    $ go install
+
+## From github
+    $ go get github.com/ijt/go_mininest
 
 # Running Examples
-    $ cd examples/lighthouse
-    $ go run lighthouse.go
+    $ go run examples/lighthouse/lighthouse.go
     2012/04/26 11:10:24 # iterates = 1000
     2012/04/26 11:10:24 Evidence: ln(Z) = -159.288 +- 0.04767
     2012/04/26 11:10:24 Information: H = 2.27284 nats = 3.27902 bits
