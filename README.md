@@ -11,7 +11,7 @@ The original code is at http://www.inference.phy.cam.ac.uk/bayesys/.
 
 # Running Examples
     $ cd examples/lighthouse
-    $ go build && ./lighthouse
+    $ go run lighthouse.go
     2012/04/26 11:10:24 # iterates = 1000
     2012/04/26 11:10:24 Evidence: ln(Z) = -159.288 +- 0.04767
     2012/04/26 11:10:24 Information: H = 2.27284 nats = 3.27902 bits
